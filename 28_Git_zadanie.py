@@ -1,2 +1,2 @@
 print('Cośtam')
-print('Coś innego')
+print('Tu będzie coś nowego')
