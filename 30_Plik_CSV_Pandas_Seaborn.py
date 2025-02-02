@@ -18,5 +18,15 @@ df.Weight /= 2.2
 print(df.head(3))
 
 print('\nWykres')
-plt.hist(df.Weight, 50)
+sns.histplot(df.query('Gender=="Male"').Weight)
+sns.histplot(df.query('Gender=="Female"').Weight)
 plt.show()
+
+df = pd.get_dummies(df)
+print(df.head(3))
+
+del df['Gender_Male']
+print(df.head(3))
+
+df = df.rename(columns={'Gender_Female': 'If_Female'})
+print(df.head(3))
